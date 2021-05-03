@@ -63,6 +63,10 @@ public class Demote implements Command {
 			throw new NoSuchMemberException();
 		}
 
+		if(toDemote.getId().equals(member.getId())) {
+			throw new Exception("Don't be so hard on yourself!");
+		}
+
 		if(!Utils.isSuperiorRank(member, toDemote)) {
 			throw new Exception("You must be a higher rank than this member!");
 		}

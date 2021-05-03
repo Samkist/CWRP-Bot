@@ -61,7 +61,6 @@ public class Ban implements Command {
 			if (memberArg.contains("#")) {
 				toBan = guild.getMemberByTag(memberArg).getUser();
 			} else {
-				System.out.println("Trying to find user id with " + memberArg);
 				toBan = Manager.jda.retrieveUserById(memberArg).complete();
 			}
 		} catch(Exception e) {

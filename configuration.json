@@ -10,6 +10,9 @@
       "author": "CWRP Manager",
       "footer": "CWRP Manager | Created by Samkist"
     },
+    "strings": {
+      "self-inflicted":
+    },
     "guild": "795399246148010055",
     "token": "ODAxODc5MjM1MjYxNDk3NDA1.YAnGOw.mHstK-6YDrk3DVghmMN_qNegKmM",
     "prefix": "+",
