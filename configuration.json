@@ -1,0 +1,274 @@
+{
+  "config": {
+    "colors": {
+      "default": "#306888"
+    },
+    "channels": {
+      "log": "833021066828972044"
+    },
+    "embed": {
+      "author": "CWRP Manager",
+      "footer": "CWRP Manager | Created by Samkist"
+    },
+    "guild": "795399246148010055",
+    "token": "ODAxODc5MjM1MjYxNDk3NDA1.YAnGOw.mHstK-6YDrk3DVghmMN_qNegKmM",
+    "prefix": "+",
+    "ban-gif": "https://i.imgur.com/O3DHIA5.gif",
+    "member-role": "833004638336188448"
+  },
+  "roles": {
+    "staff": [
+      {
+        "name": "staff",
+        "id": "795403886281883700"
+      },
+      {
+        "name": "trial-mod",
+        "id": "795403718341951528"
+      },
+      {
+        "name": "mod",
+        "id": "795403583851593748"
+      },
+      {
+        "name": "senior-staff",
+        "id": "795403394662793296"
+      },
+      {
+        "name": "senior-mod",
+        "id": "795403305953263666"
+      },
+      {
+        "name": "admin",
+        "id": "795403061120073759"
+      },
+      {
+        "name": "senior-admin",
+        "id": "795402556670738452"
+      },
+      {
+        "name": "head-admin",
+        "id": "804847157593112606"
+      },
+      {
+        "name": "trial-management",
+        "id": "796084327103856700"
+      },
+      {
+        "name": "management",
+        "id": "795402090133979206"
+      },
+      {
+        "name": "co-owner",
+        "id": "795400961295384586"
+      },
+      {
+        "name": "owner",
+        "id": "795400693561163836"
+      }
+    ],
+    "leo":
+      {
+        "leo-role": "812854287143141416",
+        "ids-to-roles": [
+          {
+            "name": "lspd",
+            "command": "812512397562216488",
+            "supervisor": "812507802232291329",
+            "interviewer": "812507802256932864",
+            "department": "812507800491393075",
+            "interview": "812512388691525632"
+          },
+          {
+            "name": "sast",
+            "command": "795610752564199444",
+            "supervisor": "833921603406397450",
+            "interviewer": "795610857014427658",
+            "department": "795610021727174697",
+            "interview": "798974614088712222"
+          },
+          {
+            "name": "bcso",
+            "command": "804162412198625290",
+            "supervisor": "833921997154418708",
+            "interviewer": "804162415876505610",
+            "department": "804162407751876630",
+            "interview": "804162692968873996"
+          },
+          {
+            "name": "safd",
+            "command": "805972510885412874",
+            "supervisor": "833921772852084737",
+            "interviewer": "805973354031874058",
+            "department": "805972940600377364",
+            "interview": "805973349032525835"
+          },
+          {
+            "name": "cc",
+            "command": "814870522579648513",
+            "supervisor": "",
+            "interviewer": "",
+            "department": "814870496206127175",
+            "interview": ""
+          }
+        ]
+      }
+  },
+  "categories": {
+    "public": {
+      "name": "**Public Commands**",
+      "commands": {
+        "say": {
+          "trigger": ["say"],
+          "usage": "<message>",
+          "description": "This will make an embed with the text you enter!"
+        },
+        "suggest": {
+          "trigger": ["suggest"],
+          "usage": "<suggestion>",
+          "description": "This will log a suggestion in ",
+          "channel": "suggestion-channel-id"
+        },
+        "avatar": {
+          "trigger": ["avatar"],
+          "usage": "<@user>",
+          "description": "This will show the avatar of the aforementioned user!"
+        },
+        "rolecommands": {
+          "trigger": ["rolecommands"],
+          "description": "This will show the the commands based on role whitelist",
+          "header": "**Commands**"
+        },
+        "help": {
+          "trigger": ["help"],
+          "description": "Prints the help message",
+          "color": "global"
+        }
+      }
+    },
+    "administrative": {
+      "name": "**Administrative Commands**",
+      "commands": {
+        "mute": {
+          "trigger": ["mute"],
+          "description": "Mutes the targeted user for a specified amount of time",
+          "usage": "<@user> [time]",
+          "permission": "staff",
+          "log": "log"
+        },
+        "purge": {
+          "trigger": ["purge"],
+          "description": "Purges the amount of messages supplied",
+          "usage": "<amount>",
+          "permission": "staff",
+          "log": "log"
+        },
+        "lockdown": {
+          "trigger": ["lockdown"],
+          "description": "Locksdown a channel",
+          "usage": "[channel] [time] [reason]",
+          "permission": "mod",
+          "log": "log"
+        },
+        "unmute": {
+          "trigger": ["unmute"],
+          "description": "Unmutes the mentioned member",
+          "usage": "<@user>",
+          "permission": "senior-staff",
+          "log": "log"
+        },
+        "kick": {
+          "trigger": ["kick"],
+          "description": "Kicks the mentioned member",
+          "usage": "<@user> [reason]",
+          "permission": "senior-staff",
+          "log": "log"
+        },
+        "ban": {
+          "trigger": ["ban"],
+          "description": "Bans the mentioned member",
+          "usage": "<@user> [reason]",
+          "permission": "admin",
+          "log": "log"
+        },
+        "role": {
+          "trigger": ["role"],
+          "description": "Applies the role to the mentioned user",
+          "usage": "<@user> <@role>",
+          "permission": "senior-admin",
+          "log": "log"
+        },
+        "demote": {
+          "trigger": ["demote"],
+          "description": "Demotes a member within the staff team",
+          "usage": "<@user> [reason]",
+          "permission": "senior-admin",
+          "log": "log"
+        },
+        "hire": {
+          "trigger": ["hire"],
+          "description": "Hires a member to the staff team",
+          "usage": "<@user>",
+          "permission": "senior-admin",
+          "log": "log"
+        },
+        "interview": {
+          "trigger": ["interview"],
+          "description": "Gives a member staff team interviewee roles",
+          "usage": "<@user>",
+          "permission": "senior-admin",
+          "log": "log"
+        },
+        "terminate": {
+          "trigger": ["terminate"],
+          "description": "Terminates a staff member",
+          "usage": "<@user> [reason]",
+          "permission": "head-admin",
+          "log": "log"
+        },
+        "promote": {
+          "trigger": ["promote"],
+          "description": "Promotes a staff member",
+          "usage": "<@user>",
+          "permission": "head-admin",
+          "log": "log"
+        },
+        "resign": {
+          "trigger": ["resign"],
+          "description": "Resigns a staff member",
+          "usage": "<@user> [reason]",
+          "permission": "head-admin",
+          "log": "log"
+        },
+        "unban": {
+          "trigger": ["unban"],
+          "description": "Unbans a member",
+          "usage": "<@user> [reason]",
+          "permission": "head-admin",
+          "log": "log"
+        },
+        "globalban": {
+          "trigger": ["gban", "globalban"],
+          "description": "Global bans a member from all CWRP discords.",
+          "usage": "<@user> [reason]",
+          "permission": "trial-management",
+          "log": "log"
+        },
+        "nuke": {
+          "trigger": ["nuke"],
+          "description": "Clones the channel, deleting all messages.",
+          "usage": "<@user> [reason]",
+          "permission": "co-owner",
+          "log": "log"
+        },
+        "spam": {
+          "trigger": ["cum"],
+          "description": "Clones the channel, deleting all messages.",
+          "usage": "<@user> [reason]",
+          "permission": "co-owner",
+          "log": "log"
+        }
+      }
+    }
+  }
+}
