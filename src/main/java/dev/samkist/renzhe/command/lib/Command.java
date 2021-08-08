@@ -1,5 +1,6 @@
 package dev.samkist.renzhe.command.lib;
 
+import dev.samkist.renzhe.utils.Utils;
 import net.dv8tion.jda.api.entities.Message;
 
 /**
@@ -17,7 +18,12 @@ public interface Command extends Comparable<Command> {
 	 * @param args    The arguments of the commands.
 	 * @since 1.0.0
 	 */
-	void execute(Message message, String args);
+	default void execute(Message message, String args) {
+		Utils.applyEvaluate(getContext(), message, args, getEvaluate());
+	}
+
+	Evaluate<Message, String> getEvaluate();
+
 
 	CommandContext getContext();
 

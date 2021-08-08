@@ -4,27 +4,33 @@
       "default": "#306888"
     },
     "channels": {
-      "log": "833021066828972044"
+      "log": "833021066828972044",
+      "staff-movement": "811778051272605696"
     },
     "embed": {
       "author": "CWRP Manager",
       "footer": "CWRP Manager | Created by Samkist"
     },
     "strings": {
-      "self-inflicted":
+      "self-inflicted": "Don't be so hard on yourself!",
+      "self-benefit": "Nice try!",
+      "superior-rank": "You do not have the ability to conduct operations on this role!",
+      "main-discord": "Please use this command in the main discord guild.",
+      "no-such-role": "There is no such role!"
+    },
+    "database": {
+      "connection-string": "mongodb+srv://cwrp:akbwFLHEfXEX9oLI@cwr.xiviy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      "database": "cwr"
     },
     "guild": "795399246148010055",
-    "token": "ODAxODc5MjM1MjYxNDk3NDA1.YAnGOw.mHstK-6YDrk3DVghmMN_qNegKmM",
+    "token": "ODQxNTMyNTY0NzQwMTEyNDA0.YJoIRg.V8ZWqJ8G0V2VyTgSMkilcQPUSxc",
     "prefix": "+",
     "ban-gif": "https://i.imgur.com/O3DHIA5.gif",
-    "member-role": "833004638336188448"
+    "member-role": "833004638336188448",
+    "mute-role": "795622610423513118"
   },
   "roles": {
     "staff": [
-      {
-        "name": "staff",
-        "id": "795403886281883700"
-      },
       {
         "name": "trial-mod",
         "id": "795403718341951528"
@@ -32,10 +38,6 @@
       {
         "name": "mod",
         "id": "795403583851593748"
-      },
-      {
-        "name": "senior-staff",
-        "id": "795403394662793296"
       },
       {
         "name": "senior-mod",
@@ -156,14 +158,14 @@
           "trigger": ["mute"],
           "description": "Mutes the targeted user for a specified amount of time",
           "usage": "<@user> [time]",
-          "permission": "staff",
+          "permission": "trial-mod",
           "log": "log"
         },
         "purge": {
           "trigger": ["purge"],
           "description": "Purges the amount of messages supplied",
           "usage": "<amount>",
-          "permission": "staff",
+          "permission": "trial-mod",
           "log": "log"
         },
         "lockdown": {
@@ -177,14 +179,14 @@
           "trigger": ["unmute"],
           "description": "Unmutes the mentioned member",
           "usage": "<@user>",
-          "permission": "senior-staff",
+          "permission": "senior-mod",
           "log": "log"
         },
         "kick": {
           "trigger": ["kick"],
           "description": "Kicks the mentioned member",
           "usage": "<@user> [reason]",
-          "permission": "senior-staff",
+          "permission": "senior-mod",
           "log": "log"
         },
         "ban": {
@@ -269,6 +271,13 @@
           "description": "Clones the channel, deleting all messages.",
           "usage": "<@user> [reason]",
           "permission": "co-owner",
+          "log": "log"
+        },
+        "colorcopy": {
+          "trigger": ["cc"],
+          "description": "Copies color from one to other role",
+          "usage": "<@role1> <@role2>",
+          "permission": "management",
           "log": "log"
         }
       }

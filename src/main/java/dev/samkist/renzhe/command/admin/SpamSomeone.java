@@ -1,9 +1,11 @@
 package dev.samkist.renzhe.command.admin;
 
-import dev.samkist.renzhe.utils.ConfigManager;
 import dev.samkist.renzhe.Manager;
 import dev.samkist.renzhe.command.lib.Command;
 import dev.samkist.renzhe.command.lib.CommandContext;
+import dev.samkist.renzhe.command.lib.Evaluate;
+import dev.samkist.renzhe.data.NoPermissionException;
+import dev.samkist.renzhe.utils.ConfigManager;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 
@@ -14,36 +16,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpamSomeone implements Command {
-	/**
-	 * This is the method called on to execute the command.
-	 *
-	 * @param message The message which triggered the command.
-	 * @param args    The arguments of the commands.
-	 * @since 1.0.0
-	 */
+
 	@Override
-	public void execute(Message message, String args) {
-		if(!message.getMember().getId().equals(Manager.SAMKIST)) return;
-		try {
-			Member member = message.getGuild().getMemberById(args);
-			URL url = null;
-
-			url = new URL("https://gist.githubusercontent.com/MattIPv4/045239bc27b16b2bcf7a3a9a4648c08a/raw/2411e31293a35f3e565f61e7490a806d4720ea7e/bee%2520movie%2520script");
-
-			BufferedReader reader = new BufferedReader(
-					new InputStreamReader(url.openStream()));
-			StringBuffer stringBuffer = new StringBuffer();
-			String inputLine;
-			while ((inputLine = reader.readLine()) != null) {
-				stringBuffer.append(inputLine);
+	public Evaluate<Message, String> getEvaluate() {
+		return (message, args) -> {
+			if(!message.getMember().getId().equals(Manager.SAMKIST)) {
+				throw new NoPermissionException();
 			}
+			try {
+				Member member = message.getGuild().getMemberById(args);
+				URL url = null;
 
-			member.getUser().openPrivateChannel().queue(s -> splitToNChar(stringBuffer.toString(), 1500).forEach(m -> s.sendMessage(m).queue()));
+				url = new URL("https://gist.githubusercontent.com/MattIPv4/045239bc27b16b2bcf7a3a9a4648c08a/raw/2411e31293a35f3e565f61e7490a806d4720ea7e/bee%2520movie%2520script");
 
-		} catch(Exception e) {
+				BufferedReader reader = new BufferedReader(
+						new InputStreamReader(url.openStream()));
+				StringBuffer stringBuffer = new StringBuffer();
+				String inputLine;
+				while ((inputLine = reader.readLine()) != null) {
+					stringBuffer.append(inputLine);
+				}
 
-		}
+				member.getUser().openPrivateChannel().queue(s -> splitToNChar(stringBuffer.toString(), 1500).forEach(m -> s.sendMessage(m).queue()));
 
+			} catch(Exception e) {
+
+			}
+		};
 	}
 
 	@Override

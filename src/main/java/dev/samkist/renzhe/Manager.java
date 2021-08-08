@@ -5,6 +5,7 @@ import com.google.common.cache.CacheBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import dev.samkist.renzhe.command.lib.MessageHandler;
 import dev.samkist.renzhe.utils.ConfigManager;
+import dev.samkist.renzhe.utils.DBManager;
 import dev.samkist.renzhe.utils.Utils;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -60,6 +61,7 @@ public class Manager implements EventListener {
 		}
 
 		jda.getGuilds().forEach(g -> GuildInviteCache.put(g.getId(), g.retrieveInvites().complete()));
+		DBManager.initialize(ConfigManager.getDatabase(), ConfigManager.getConnectionString());
 	}
 
 	@Override

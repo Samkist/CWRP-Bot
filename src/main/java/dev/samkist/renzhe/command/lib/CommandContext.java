@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CommandContext {
+	private final String category;
 	private final String name;
 	private final String description;
 	private final String requiredPermission;
@@ -14,7 +15,8 @@ public class CommandContext {
 	private final Color embedColor;
 	private final AtomicBoolean visible = new AtomicBoolean(true);
 
-	public CommandContext(String name, String description, String requiredPermission, String usage, List<String> triggers, List<Attribute> attributes, Color embedColor) {
+	public CommandContext(String category, String name, String description, String requiredPermission, String usage, List<String> triggers, List<Attribute> attributes, Color embedColor) {
+		this.category = category;
 		this.name = name;
 		this.description = description;
 		this.requiredPermission = requiredPermission;
@@ -22,6 +24,10 @@ public class CommandContext {
 		this.triggers = triggers;
 		this.attributes = attributes;
 		this.embedColor = embedColor;
+	}
+
+	public String category() {
+		return category;
 	}
 
 	public String name() {

@@ -37,7 +37,8 @@ public class CommandRegistry {
 			new Role(),
 			new Unban(),
 			new Unmute(),
-				new SpamSomeone()
+				new SpamSomeone(),
+				new CopyColor()
 		);
 	}
 
